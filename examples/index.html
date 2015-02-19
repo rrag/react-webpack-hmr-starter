@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>React webpack HMR example</title>
+    <!-- include react -->
+    <script src="react/dist/react-with-addons.js"></script>
+</head>
+<body>
+    <div id="content">
+        <!-- this is where the root react component will get rendered -->
+    </div>
+    <!-- include the bundle that contains all our scripts, produced by webpack -->
+    <!-- the bundle is served by the webpack-dev-server, so serve it also from localhost:8090 -->
+
+    <script type="text/javascript" src="http://localhost:8090/js/basic-property-grid.js"></script>
+</body>
+</html>
