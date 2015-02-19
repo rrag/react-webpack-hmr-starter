@@ -4,7 +4,7 @@
   "description": "Starter kit for ReactJS with webpack HMR and browser sync",
   "main": "src/scripts/index.js",
   "scripts": {
-    "test": "echo 'test'",
+    "test": "echo 'test'"
   },
   "author": "Ragunath Ramaswamy",
   "homepage": "https://github.com/rrag/react-webpack-hmr-starter",

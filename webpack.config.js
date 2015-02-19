@@ -7,7 +7,7 @@ module.exports = {
 	],
 	output: {
 		path: __dirname + "/build/scripts/",
-		filename: "basic-property-grid.js",
+		filename: "react-webpack-hmr-starter.js",
 		publicPath: 'js/'
 	},
 	module: {

@@ -18,7 +18,7 @@ module.exports = React.createClass({
 		var response = (<div>
 							<pre>
 								<code>
-									If you are in watch mode,
+									If you are in watch mode
 								</code>
 							</pre>
 							<pre>
