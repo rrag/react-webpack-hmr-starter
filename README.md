@@ -53,7 +53,7 @@ open `webpack.config.js` in text editor and change
 
 ```javascript
 entry: [
-    './src/scripts/index.jsx'
+    './src/scripts/index.js'
 ],
 ```
 

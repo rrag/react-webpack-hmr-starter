@@ -7,7 +7,7 @@
     "test": "echo 'test'",
   },
   "author": "Ragunath Ramaswamy",
-  "homepage": "http://www.github.com/rrag/react-webpack-hmr-starter/",
+  "homepage": "https://github.com/rrag/react-webpack-hmr-starter",
   "license": "MIT",
   "dependencies": {
     "react": "^0.12.2"
