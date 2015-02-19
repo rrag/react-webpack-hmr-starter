@@ -13,12 +13,17 @@ module.exports = React.createClass({
 	handleChange(e) {
 		this.setState({ inputText : e.currentTarget.value });
 	},
+	componentDidMount() {
+		this.refs.world.getDOMNode().value = "";
+	},
+	componentDidUpdate() {
+		console.log(this.refs.world.getDOMNode().value);
+	},
 	render() {
-		console.log("here");
 		var response = (<div>
 							<pre>
 								<code>
-									If you are in watch mode
+									ddIf you are in watch mode
 								</code>
 							</pre>
 							<pre>
@@ -37,7 +42,7 @@ module.exports = React.createClass({
 									notice how the state is retained !!!
 								</code>
 							</pre>
-							<input type="text" onChange={this.handleChange} />
+							<input type="text" onChange={this.handleChange} ref="world" />
 							<ul>
 								<li>Hello World</li>
 								<li>{"Hello " + this.state.inputText}</li>
