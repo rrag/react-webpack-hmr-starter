@@ -84,7 +84,7 @@ gulp.task("watch", ["serve"], function(callback) {
 
 	watchConfig.devtool = "sourcemap";//"eval";
 	watchConfig.debug = true;
-	watchConfig.externals = null; // if externals are present hot reload does not work.
+	// watchConfig.externals = null; // if externals are present hot reload does not work.
 	watchConfig.output.publicPath = "http://localhost:8090/" + watchConfig.output.publicPath
 
 	watchConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
@@ -109,14 +109,24 @@ gulp.task("watch", ["serve"], function(callback) {
 });
 
 
-gulp.task('serve', function() {
-	browserSync({
+gulp.task('serve', function(cb) {
+	var express = require("express");
+	var app = express();
+	app.use(express.static("examples")); // path.join(__dirname, "build")
+	app.use(express.static("node_modules")); // path.join(__dirname, "build")
+	app.use(express.static("build"));
+
+	app.listen(3500);
+	cb();
+
+	/*browserSync({
 		server: {
 			baseDir: ["examples/", "node_modules/", "build/"]
 		},
 		ui: {
 			port: 9080
 		},
+		browser: "google-chrome-stable",
 		port: 3500
-	});
+	});*/
 });

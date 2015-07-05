@@ -7,21 +7,23 @@ module.exports = {
 	],
 	output: {
 		path: __dirname + "/build/scripts/",
-		filename: "react-webpack-hmr-starter.js",
+		filename: "bundle.js",
 		publicPath: 'js/'
 	},
 	module: {
 		loaders: [
-			{ test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx?harmony'], exclude: /node_modules/ },
+			{ test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
 			{ test: /\.scss$/, loaders: ['style', 'css', 'autoprefixer', 'sass?outputStyle=expanded'], exclude: /node_modules/ }
 		]
 	},
 	plugins: [
 		new webpack.NoErrorsPlugin()
 	],
-	externals: {
+	// if Using externals uncomment the block of code from render.jsx
+	// refer to https://github.com/gaearon/react-hot-loader/blob/master/docs/README.md#usage-with-external-react for why
+	/*externals: {
 		'react': 'React'
-	},
+	},*/
 	resolve: {
 		extensions: ['', '.js', '.jsx', '.scss']
 	}

@@ -1,7 +1,15 @@
 'use strict'
 
-var React = require('react')
+import React from 'react';
+import Hello from './subfolder/hello';
 
-var Hello = require('./subfolder/hello')
+var rootInstance = React.render(<Hello />, document.getElementById('content'));
 
-React.renderComponent(<Hello />, document.getElementById('content'))
+/*if (module.hot) {
+  require('react-hot-loader/Injection').RootInstanceProvider.injectProvider({
+    getRootInstances: function () {
+      // Help React Hot Loader figure out the root component instances on the page:
+      return [rootInstance];
+    }
+  });
+}*/
