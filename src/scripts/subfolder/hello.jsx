@@ -34,7 +34,7 @@ export default class HelloReact extends React.Component {
 			<pre>
 				<code>
 					open up src/scripts/subfolder/hello.jsx
-					and modify the render() function and see the hot reload in action
+					and modify the render() function and see the hot reload in action right here
 				</code>
 			</pre>
 			<pre>
