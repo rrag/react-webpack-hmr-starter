@@ -29,7 +29,7 @@ $ npm install
 $ npm run watch
 ```
 
-Open browser at [http://localhost:3500](http://localhost:3500)
+Open browser at [http://localhost:8090](http://localhost:8090)
 
 ##### See HMR (Hot Module Replacement) in action
 
