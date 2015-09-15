@@ -13,8 +13,9 @@ watchConfig.entry.push("webpack-dev-server/client?http://localhost:" + devPort);
 
 watchConfig.module.loaders[0] = { test: /\.(js|jsx)$/, loaders: ["react-hot", "babel"], exclude: /node_modules/ };
 
-watchConfig.misc = {
-	watchPort: devPort
+watchConfig.devServer = {
+	port: devPort,
+	contentBase: "examples",
 };
 
 watchConfig.output.publicPath = "http://localhost:" + devPort + "/" + watchConfig.output.publicPath

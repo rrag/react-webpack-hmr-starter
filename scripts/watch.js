@@ -8,6 +8,7 @@ var watchCompiler = webpack(watchConfig);
 var server = new WebpackDevServer(watchCompiler, {
 	publicPath: watchConfig.output.publicPath,
 	hot: true,
+	contentBase: watchConfig.devServer.contentBase,
 	quiet: false,
 	noInfo: false,
 	stats: {
@@ -15,12 +16,13 @@ var server = new WebpackDevServer(watchCompiler, {
 	}
 });
 
-server.listen(watchConfig.misc.watchPort, "localhost", function(err) {
+server.listen(watchConfig.devServer.port, "localhost", function(err) {
 	if (err) throw new Error("webpack-dev-server", err);
-	console.log("[webpack-dev-server]", "http://localhost:%s/webpack-dev-server/index.html", watchConfig.misc.watchPort);
+	console.log("[webpack-dev-server]", "http://localhost:%s/webpack-dev-server/index.html", watchConfig.devServer.port);
 });
 
-var serve = require("./serve");
 var path = require("path");
+var serveStatic = require("serve-static")
 
-serve(path.join(__dirname, ".."), 3500);
+// server.app.use(serveStatic("build"));
+server.app.use(serveStatic(path.join(__dirname, "..", "node_modules")));

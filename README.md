@@ -1,3 +1,5 @@
+# Use https://github.com/gaearon/react-transform-boilerplate instead.
+
 ## About this
 
 This is a starter project for webpack with React hot reload
